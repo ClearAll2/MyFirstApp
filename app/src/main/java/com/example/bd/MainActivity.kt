@@ -1,9 +1,14 @@
 package com.example.bd
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+
+const val EXTRA_MESSAGE = "EXTRA_MESSAGE"
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,8 +17,18 @@ class MainActivity : AppCompatActivity() {
 
         val btt :Button = findViewById(R.id.buttonShowme)
         btt.setOnClickListener{
-            val toast = Toast.makeText(this, "Happy Birthday!!!!", Toast.LENGTH_LONG)
-            toast.show()
+            val conText = findViewById<EditText>(R.id.editTextTextPersonName)
+            val message = conText.text.toString()
+            if (message.isEmpty())
+            {
+                val toast = Toast.makeText(this, "Name cannot be empty!", Toast.LENGTH_LONG)
+                toast.show()
+                return@setOnClickListener
+            }
+            val intent = Intent(this, ShowMe::class.java).apply {
+                putExtra(EXTRA_MESSAGE, message)
+            }
+            startActivity(intent)
         }
     }
 }

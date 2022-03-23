@@ -10,6 +10,7 @@
         android:id="@+id/imageViewBD"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:contentDescription="bakckground"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,21 +38,22 @@
         android:id="@+id/textViewFrom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="24dp"
-        android:layout_marginBottom="160dp"
+        android:layout_marginBottom="92dp"
         android:fontFamily="casual"
         android:text="@string/bottom_text"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/buttonShowme"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="24dp"
         android:text="@string/button"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="#100F0F"
@@ -62,14 +64,26 @@
         android:id="@+id/textView"
         android:layout_width="360dp"
         android:layout_height="99dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="148dp"
         android:text="@string/main_text2"
         android:textAlignment="center"
         android:textColor="#EAE518"
         android:textSize="20sp"
         android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="171dp"
+        android:layout_height="45dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/buttonShowme" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
